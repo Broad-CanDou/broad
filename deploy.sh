@@ -17,7 +17,7 @@ if [ -z "$GITHUB_TOKEN" ]; then
   githubUrl=git@github.com:Broad-CanDou/broad.git
 else
   msg='来自github actions的自动部署'
-  githubUrl=https://Broad-CanDou:${GITHUB_TOKEN}@github.com:Broad-CanDou/broad.git
+  githubUrl=https://Broad-CanDou/${GITHUB_TOKEN}@github.com:Broad-CanDou/broad.git
   git config --global user.name "wangfuyang"
   git config --global user.email "w_16321632@163.com"
 fi
