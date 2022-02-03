@@ -169,7 +169,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   //       return dayjs(timestamp).format('YYYY-MM-DD HH:mm:ss')
   //     },
   //   },
-  // },
+   },
 
   markdown: {
     lineNumbers: true
