@@ -164,12 +164,12 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   
 
     // "上次更新"的时间格式
-    '@vuepress/last-updated': {
-      transformer: (timestamp, lang) => {
-        return dayjs(timestamp).format('YYYY-MM-DD HH:mm:ss')
-      },
-    },
-  },
+  //   '@vuepress/last-updated': {
+  //     transformer: (timestamp, lang) => {
+  //       return dayjs(timestamp).format('YYYY-MM-DD HH:mm:ss')
+  //     },
+  //   },
+  // },
 
   markdown: {
     lineNumbers: true
