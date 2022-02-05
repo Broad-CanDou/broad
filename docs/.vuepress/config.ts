@@ -16,7 +16,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       description: '在工作中收集知识，做此纪录',
     }
   },
-   base: '/broad/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
+   //base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
 
   // 主题配置
   themeConfig: {
