@@ -5,7 +5,7 @@
 
 ### 🚀本站访问地址 🚀
 
-:tada: 主地址: [broad-bean](www.braod-bean.cn)
+:tada: 主地址: [broad-bean](www.broad-bean.cn)
 :tada: 备用地址: [broad-bean-gitee](http://wbzbroad.gitee.io/broad)
 
 
