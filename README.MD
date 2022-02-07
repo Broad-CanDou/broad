@@ -1,4 +1,4 @@
-<p align="center"><img src="./docs/.vuepress/public/img/logo3.png" wight="150px" height="150px"></p>
+<p align="center"><img src="https://gitee.com/wbzBroad/bed/raw/master/img/logo3.png" wight="150px" height="150px"></p>
 
 <h2 align="center">Broad Bean</h2>
 
@@ -51,4 +51,4 @@
 
 | 公众号 | 微信 | 
 | :---: | :---: | 
-| <img src="./docs/.vuepress/public/otherImg/info.jpg" alt="公众号"> | <img src="./docs/.vuepress/public/otherImg/weixin.jpg" alt="公众号" weight="220px" height="220px">| 
+| <img src="https://gitee.com/wbzBroad/bed/raw/master/img/info.jpg" alt="公众号"> | <img src="https://gitee.com/wbzBroad/bed/raw/master/img/weixin.jpg" alt="微信" weight="220px" height="220px">| 

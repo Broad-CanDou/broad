@@ -29,7 +29,7 @@ const htmlModule: VdoingThemeConfig['htmlModules'] = {
       font-weight: bold;
       margin: 0 0 8px 0;
     ">公众号</p>
-    <img src="otherImg/info.jpg" weight="200px"height="200px" />
+    <img src="https://gitee.com/wbzBroad/bed/raw/master/img/info.jpg" weight="200px"height="200px" />
     </br></br>
     关注公众号，回复[<b>面试资源</b>]，可获取面试题资源<span>
     </div>`,
