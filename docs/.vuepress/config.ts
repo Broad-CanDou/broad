@@ -34,6 +34,12 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
             items: [
               {text: '《RabbitMq》',link: '/note/RabbitMq/'}
             ]
+          },
+          {
+            text: 'Shell',
+            items: [
+              {text: '《Shell》',link: '/note/Shell/'}
+            ]
           }
         ],
       },
