@@ -30,15 +30,10 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         link: '/java/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
         items: [
           {
-            text: '中间件',
+            text: '学习笔记',
             items: [
-              {text: '《RabbitMq》',link: '/note/RabbitMq/'}
-            ]
-          },
-          {
-            text: 'Shell',
-            items: [
-              {text: '《Shell》',link: '/note/Shell/'}
+              {text: '《RabbitMq》笔记',link: '/note/RabbitMq/'},
+              {text: '《Shell》笔记',link: '/note/Shell/'}
             ]
           }
         ],
