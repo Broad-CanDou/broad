@@ -32,7 +32,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           {
             text: '学习笔记',
             items: [
-              {text: '《RabbitMq》笔记',link: '/note/RabbitMq/'},
+              {text: '《中间件》笔记',link: '/note/RabbitMq/'},
               {text: '《Shell》笔记',link: '/note/Shell/'}
             ]
           }
