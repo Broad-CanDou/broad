@@ -116,14 +116,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
   head: [
     ['link', { rel: 'icon', href: '/img/logo3.png' }], //favicons，资源放在public文件夹
-    // [
-    //   'script',
-    //   {
-    //     'data-ad-client': 'ca-pub-7828333725993554',
-    //     async: 'async',
-    //     src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
-    //   },
-    // ], // 网站关联Google AdSense 与 html格式广告支持（你可以去掉）
   ],
 
   // 插件配置
@@ -170,6 +162,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         return dayjs(timestamp).format('YYYY/MM/DD, HH:mm:ss')
       },
     },
+    // 进度条显示
+    'reading-progress':{},
    },
 
   markdown: {
