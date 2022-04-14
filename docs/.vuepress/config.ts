@@ -2,8 +2,8 @@ import { resolve } from 'path'
 import { defineConfig4CustomTheme } from 'vuepress/config'
 import { VdoingThemeConfig } from 'vuepress-theme-vdoing/types'
 import dayjs from 'dayjs'
-//import baiduCode from './config/baiduCode' // 百度统计hm码
 import htmlModules from './config/htmlModules' // 自定义插入的html块
+import { readFileList, readTotalFileWords, readEachFileWords } from './webSiteInfo/readFile';
 
 
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
@@ -16,29 +16,36 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       description: '在工作中收集知识，做此纪录',
     }
   },
-   //base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
-
+  
   // 主题配置
   themeConfig: {
+    // 文章内容块的背景风格，默认无. 1 方格 | 2 横线 | 3 竖线 | 4 左斜线 | 5 右斜线 | 6 点状
+    contentBgStyle: 4, 
 
-    contentBgStyle: 4, // 文章内容块的背景风格，默认无. 1 方格 | 2 横线 | 3 竖线 | 4 左斜线 | 5 右斜线 | 6 点状
     // 导航配置
     nav: [
       { text: '首页', link: '/' },
       {
-        text: '后端',
-        link: '/java/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
+        text: 'java',
+        link: '/java/',
         items: [
           {
             text: '学习笔记',
             items: [
-              {text: '《中间件》笔记',link: '/note/RabbitMq/'},
-              {text: '《Shell》笔记',link: '/note/Shell/'}
+              {text: '中间件',link: '/note/RabbitMq/'}
             ]
           }
         ],
       },
       {text: '前端',link: '/ui/'},
+      {
+        text: '杂文',
+        link: '/technology/',
+        items: [
+          {text: 'Shell',link: '/note/Shell/'},
+          {text: 'Linux',link: '/note/Linux/'}
+        ]
+      },
       { text: '关于', link: '/about/' },
       {
         text: '收藏',
@@ -64,25 +71,24 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     editLinkText: '编辑',
     
 
-    // 侧边栏  'structuring' | { mode: 'structuring', collapsable: Boolean} | 'auto' | <自定义>    温馨提示：目录页数据依赖于结构化的侧边栏数据，如果你不设置为'structuring',将无法使用目录页
+    // 侧边栏 
     sidebar: 'structuring',
 
-    // 文章默认的作者信息，(可在md文件中单独配置此信息) string | {name: string, link?: string}
+    // 文章默认的作者信息
     author: {
       name: 'WangBuZheng', // 必需
       link: 'https://github.com/Broad-CanDou', // 可选的
     },
 
-    // 博主信息 (显示在首页侧边栏)
+    // 博主信息
     blogger: {
       avatar: 'https://gitee.com/wbzBroad/bed/raw/master/img/peolo.jpg',
       name: 'Wang Bu Zheng',
       slogan: '开发农名工',
     },
 
-    // 社交图标 (显示于博主信息栏和页脚栏。内置图标：https://doc.xugaoyi.com/pages/a20ce8/#social)
+    // 社交图标 
     social: {
-      // iconfontCssFile: '//at.alicdn.com/t/xxx.css', // 可选，阿里图标库在线css文件地址，对于主题没有的图标可自己添加。阿里图片库：https://www.iconfont.cn/
       icons: [
         {
           iconClass: 'icon-weixin',
@@ -110,12 +116,29 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     },
 
     // 自定义hmtl(广告)模块
-    htmlModules
+    htmlModules,
+          // 站点配置（首页 & 文章页）
+    blogInfo: {
+      blogCreate: '2021-10-19', // 博客创建时间
+      indexView: true,  // 开启首页的访问量和排名统计，默认 true（开启）
+      pageView: true,  // 开启文章页的浏览量统计，默认 true（开启）
+      readingTime: true,  // 开启文章页的预计阅读时间，条件：开启 eachFileWords，默认 true（开启）。可在 eachFileWords 的 readEachFileWords 的第二个和第三个参数自定义，默认 1 分钟 300 中文、160 英文
+      eachFileWords: readEachFileWords([''], 300, 160),  // 开启每个文章页的字数。readEachFileWords(['xx']) 关闭 xx 目录（可多个，可不传参数）下的文章页字数和阅读时长，后面两个参数分别是 1 分钟里能阅读的中文字数和英文字数。无默认值。readEachFileWords() 方法默认排除了 article 为 false 的文章
+      mdFileCountType: 'archives',  // 开启文档数。1. archives 获取归档的文档数（默认）。2. 数组 readFileList(['xx']) 排除 xx 目录（可多个，可不传参数），获取其他目录的文档数。提示：readFileList() 获取 docs 下所有的 md 文档（除了 `.vuepress` 和 `@pages` 目录下的文档）
+      totalWords: 'archives',  // 开启本站文档总字数。1. archives 获取归档的文档数（使用 archives 条件：传入 eachFileWords，否则报错）。2. readTotalFileWords(['xx']) 排除 xx 目录（可多个，可不传参数），获取其他目录的文章字数。无默认值
+      moutedEvent: '.tags-wrapper',   // 首页的站点模块挂载在某个元素后面（支持多种选择器），指的是挂载在哪个兄弟元素的后面，默认是热门标签 '.tags-wrapper' 下面，提示：'.categories-wrapper' 会挂载在文章分类下面。'.blogger-wrapper' 会挂载在博客头像模块下面
+      // 下面两个选项：第一次获取访问量失败后的迭代时间
+      indexIteration: 2500,   // 如果首页获取访问量失败，则每隔多少时间后获取一次访问量，直到获取成功或获取 10 次后。默认 3 秒。注意：设置时间太低，可能导致访问量 + 2、+ 3 ......
+      pageIteration: 2500,    // 如果文章页获取访问量失败，则每隔多少时间后获取一次访问量，直到获取成功或获取 10 次后。默认 3 秒。注意：设置时间太低，可能导致访问量 + 2、+ 3 ......
+      // 说明：成功获取一次访问量，访问量 + 1，所以第一次获取失败后，设置的每个隔段重新获取时间，将会影响访问量的次数。如 100 可能每次获取访问量 + 3
+    },
   },
 
-  // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
+
   head: [
-    ['link', { rel: 'icon', href: '/img/logo3.png' }], //favicons，资源放在public文件夹
+    ['link', { rel: 'icon', href: '/img/logo3.png' }], 
+    ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
+    ['link', { rel: 'stylesheet', href: 'https://at.alicdn.com/t/font_3077305_pt8umhrn4k9.css' }]
   ],
 
   // 插件配置
@@ -128,10 +151,10 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 代码块复制按钮
     'one-click-copy': {
-      copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
-      copyMessage: '复制成功', // default is 'Copy successfully and then paste it for use.'
-      duration: 1000, // prompt message display time.
-      showInMobile: false, // whether to display on the mobile side, default: false.
+      copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], 
+      copyMessage: '复制成功', 
+      duration: 1000, 
+      showInMobile: false, 
     },
 
     // DEMO演示模块, API: https://github.com/xiguaxigua/vuepress-plugin-demo-block
@@ -168,6 +191,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
   markdown: {
     lineNumbers: true
-  }
+  },
+
 
 })
