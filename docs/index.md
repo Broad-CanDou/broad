@@ -8,15 +8,15 @@ features: # 可选的
   - title: 后端
     details: java、Spring、Mq框架等技术
     link: /java/ # 可选
-    imgUrl: "https://gitee.com/wbzBroad/bed/raw/master/img/java.png" # 可选
+    imgUrl: "/img/java.png" # 可选
   - title: 前端
     details: html(5)/css(3)，前端页面相关技术
     link: /ui/
-    imgUrl: https://gitee.com/wbzBroad/bed/raw/master/img/webs.png
+    imgUrl: /img/webs.png
   - title: 技术
     details: 技术文档、教程、技巧、总结等文章
     link: /technology/
-    imgUrl: https://gitee.com/wbzBroad/bed/raw/master/img/other1.png
+    imgUrl: /img/other1.png
 
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 # postList: detailed
