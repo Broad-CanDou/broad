@@ -21,7 +21,7 @@
     "vuepress-plugin-one-click-copy": "^1.0.2",
     "vuepress-plugin-reading-progress": "^1.0.10",
     "vuepress-plugin-zooming": "^1.1.7",
-    "vuepress-theme-vdoing": "^1.9.4",
+    "vuepress-theme-vdoing": "^1.11.3",
     "yamljs": "^0.3.0"
   },
   "dependencies": {

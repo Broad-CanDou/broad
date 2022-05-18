@@ -46,6 +46,10 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           {text: 'Linux',link: '/note/Linux/'}
         ]
       },
+      {
+        text: '八股文',
+        link: '/BaGuWen/',
+      },
       { text: '关于', link: '/about/' },
       {
         text: '收藏',
@@ -61,7 +65,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         ],
       },
     ],
-    sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
+    sidebarDepth: 0, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     logo: '/img/logo3.png', // 导航栏logo
     repo: 'Broad-CanDou/broad', // 导航栏右侧生成Github链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
@@ -73,7 +77,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 侧边栏 
     sidebar: 'structuring',
-
     // 文章默认的作者信息
     author: {
       name: 'WangBuZheng', // 必需
