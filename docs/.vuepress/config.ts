@@ -26,7 +26,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     nav: [
       { text: '首页', link: '/' },
       {
-        text: 'java',
+        text: '后端',
         link: '/java/',
         items: [
           {
@@ -41,10 +41,10 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       {
         text: '杂文',
         link: '/technology/',
-        items: [
-          {text: 'Shell',link: '/note/Shell/'},
-          {text: 'Linux',link: '/note/Linux/'}
-        ]
+        // items: [
+        //   {text: 'Shell',link: '/note/Shell/'},
+        //   {text: 'Linux',link: '/note/Linux/'}
+        // ]
       },
       {
         text: '八股文',
